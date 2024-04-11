@@ -1,16 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DI Frontend Exercise
 
 ## Getting Started
 
-First, run the development server:
+First, ensure you have installed `bun`. This repo also contains a `justfile` for easy automation with `just`.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+- [Bun](https://bun.sh/)
+- [Just](https://just.systems/)
+
+Second, install the dependencies and run the development server:
+
+```fish
+bun install
 bun dev
 ```
 
@@ -20,17 +20,29 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Challenge
 
-To learn more about Next.js, take a look at the following resources:
+This repository provides a blank slate on which to solve the following problem statement.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Tech
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The application should be written using React with TypeScript. Please ensure you have a React development environment (e.g. VSCode, Bun, etc.).
 
-## Deploy on Vercel
+The form request should conform to REST or GraphQl, but the server/API need not exist for the exercise.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### User Story
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> **As a** user,<br> **I want** immediate feedback when a field is invalid,<br> **So that** I can correct my entry and proceed with valid data
+
+### Acceptance Criteria
+
+> **Given** a registration form exists with the following fields: First Name; Last Name; Email Address; Password; Confirm Password,<br> **When** I enter data that conforms to the rules below,<br> **Then** the form is submitted and a request is made with the form data.<br> **When** I enter data that does not conform to the rules below,<br> **Then** the form is prevented from submitting and the appropriate error message appears at each field to advise the user.<br>
+
+### Validation rules
+
+- None of the form fields should be empty.
+- First Name should be at least 3 characters long.
+- Last Name should be at least 3 characters long.
+- Email should follow a regex text to be verified.
+- Password and Confirm Password should match.
+- All fields should be required.
